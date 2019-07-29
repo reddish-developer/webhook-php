@@ -6,8 +6,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-
-echo $json ;	$text = $json->result->parameters->text;
+$text = $json->result->parameters->text;
 
 	switch ($text) {
 		case 'hi':
