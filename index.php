@@ -37,7 +37,7 @@ switch ($text) {
 	
 $response->fulfillmentText = $speech;
 	
-$response->fulfillmentMessages->text->text = $speech;
+$response->fulfillmentMessages->simpleResponses->simpleResponses->textToSpeech = $speech;
 	
 $response->source = "webhook";
 	
