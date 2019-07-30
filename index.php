@@ -37,13 +37,12 @@ switch ($text) {
 	
 $response->fulfillmentText = $speech;
 	
-$response->fulfillmentMessages = array('simpleResponses' =>  array (
- 'textToSpeech' => $speech ));	
+$response->fulfillmentMessages = array( 'textToSpeech' => $speech );	
 $response->source = "webhook";
 	
 
 
-echo json_encode(array($response));
+echo json_encode($response);
 
 }
 
