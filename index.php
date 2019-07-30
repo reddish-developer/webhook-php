@@ -34,7 +34,7 @@ $response->displayText = $speech;
 	
 $response->source = "webhook";
 	
-$response->ayuda = $text;
+$response->ayuda = $json;
 	
 echo json_encode($response);
 }
