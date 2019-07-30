@@ -37,8 +37,8 @@ switch ($text) {
 	
 $response->fulfillmentText = $speech;
 	
-$response->fulfillmentMessages->simpleResponses->simpleResponses->textToSpeech = $speech;
-	
+$response->fulfillmentMessages = array('simpleResponses' =>  array (
+ 'textToSpeech' => $speech ));	
 $response->source = "webhook";
 	
 
