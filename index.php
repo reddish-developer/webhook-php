@@ -43,8 +43,8 @@ $response->source = "webhook";
 
 $response = array(
 		   'simpleResponse' => array(
-			   'textToSpeech' => $textToSpeech,
-			   'displayText' => $displayText
+			   'textToSpeech' => $speech ,
+			   'displayText' => $speech 
 			)
 		);
 
