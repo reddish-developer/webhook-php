@@ -41,9 +41,7 @@ $response->displayText = $speech;
 	
 $response->source = "webhook";
 	
-$response->ayuda = $textqueryResult ;
-$response->ayuda2 = $textparameters ;
-$response->ayuda3 = $text ;
+
 
 echo json_encode($response);
 }
