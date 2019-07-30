@@ -27,10 +27,16 @@ $text = $json->result->parameters->text;
 	}
 
 	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
-	$response->source = "webhook";
-	echo json_encode($response);
+	
+$response->speech = $speech;
+	
+$response->displayText = $speech;
+	
+$response->source = "webhook";
+	
+$response->ayuda = "junior";
+	
+echo json_encode($response);
 }
 else
 {
