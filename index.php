@@ -43,11 +43,14 @@ $response->source = "webhook";
 	
 
 
-echo json_encode($response);
+echo json_encode(array($response));
+
 }
+
 else
 {
 	echo "Method not allowed";
 }
+
 
 ?>
