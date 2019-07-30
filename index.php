@@ -5,10 +5,17 @@ $method = $_SERVER['REQUEST_METHOD'];
 // Process only juniorwhen method is POST
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
-	$json = json_decode($requestBody);
+	
+$json = json_decode($requestBody);
 $text = $json->queryResult->parameters->text;
 
-	switch ($text) {
+	
+$textqueryResult = $json->queryResult;
+$textparameters = $json->queryResult->parameters;
+
+	
+
+switch ($text) {
 		case 'hi':
 			$speech = "Hi, Nice to meet you";
 			break;
@@ -34,8 +41,10 @@ $response->displayText = $speech;
 	
 $response->source = "webhook";
 	
-$response->ayuda = $json;
-	
+$response->ayuda = $textqueryResult ;
+$response->ayuda2 = $textparameters ;
+$response->ayuda3 = $text ;
+
 echo json_encode($response);
 }
 else
