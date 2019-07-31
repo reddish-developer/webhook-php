@@ -8,8 +8,8 @@ $dbName = "DB_A41070_iluminacion1108";
 
 // Process only juniorwhen method is POST
 if($method == 'POST'){
-	$requestBody = file_get_contents('php://input');
 	
+$requestBody = file_get_contents('php://input');	
 $json = json_decode($requestBody);
 $text = $json->queryResult->parameters->text;
 	
@@ -17,7 +17,14 @@ $textqueryResult = $json->queryResult;
 $textparameters = $json->queryResult->parameters;
 
 
-//MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND.");
+
+$link = mssql_connect($hostname, $username, $password);
+if (!$link) {
+    $text = 'Something went wrong while connecting to MSSQL');
+}
+else{
+    $text ='connected ';
+	
 //mssql_select_db($dbName) or DIE("Database unavailable");
 
 //$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
@@ -29,7 +36,7 @@ $textparameters = $json->queryResult->parameters;
    //      print( "$line[0] - $line[1]\n");
     // }
 	 
-$text =  $hostname;
+//$text =  $hostname;
 
 switch ($text) {
 		case 'hi':
