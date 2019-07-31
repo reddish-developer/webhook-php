@@ -41,12 +41,20 @@ $response->fulfillmentMessages = array( 'textToSpeech' => $speech );
 $response->source = "webhook";
 	
 
-$response = array(
-		   'simpleResponse' => array(
-			   'textToSpeech' => $speech ,
-			   'displayText' => $speech 
-			)
-		);
+$response = array (
+  'fulfillmentText' => 'displayed&spoken response',
+  'fulfillmentMessages' => 
+  array (
+    0 => 
+    array (
+      'text' => 
+      array (
+        0 => $speech,
+      ),
+    ),
+  ),
+  'source' => 'webhook',
+);
 
 echo json_encode($response);
 
