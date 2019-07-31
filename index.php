@@ -1,10 +1,10 @@
 <?php 
 
 $method = $_SERVER['REQUEST_METHOD'];
-$hostname = "2K5CIPSA";
-$username = "sa";
-$password = "CTDY2K";
-$dbName = "CIPSA";
+$hostname = "sql5017.site4now.net";
+$username = "DB_A41070_iluminacion1108_admin";
+$password = "iluminacion1108";
+$dbName = "DB_A41070_iluminacion1108";
 
 // Process only juniorwhen method is POST
 if($method == 'POST'){
@@ -20,7 +20,7 @@ $textparameters = $json->queryResult->parameters;
 MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND.");
 mssql_select_db($dbName) or DIE("Database unavailable");
 
-$query = "SELECT TOP 1 NOM_ARTICULO FROM ARTICULO";
+$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
 $result = mssql_query( $query );
 
 for ($i = 0; $i < mssql_num_rows( $result ); ++$i)
