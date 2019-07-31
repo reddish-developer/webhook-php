@@ -42,16 +42,18 @@ $response->source = "webhook";
 	
 
 $response = array (
-  'fulfillmentText' => 'displayed&spoken response',
-  'fulfillmentMessages' => 
+  'speech' => 'spoken response',
+  'displayText' => 'displayed response',
+  'messages' => 
   array (
     0 => 
     array (
-      'text' => 'text response',
+      'speech' => 'Text response',
+      'type' => 0,
     ),
   ),
   'source' => 'example.com',
-  'payload' => 
+  'data' => 
   array (
     'google' => 
     array (
@@ -64,7 +66,7 @@ $response = array (
           array (
             'simpleResponse' => 
             array (
-              'textToSpeech' => 'this is a simple response',
+              'textToSpeech' => 'xxthis is a simple response',
             ),
           ),
         ),
@@ -72,35 +74,35 @@ $response = array (
     ),
     'facebook' => 
     array (
-      'text' => 'Hello, Facebook!',
+      'text' => 'xxHello, Facebook!',
     ),
     'slack' => 
     array (
-      'text' => 'This is a text response for Slack.',
+      'text' => 'xxThis is a text response for Slack.',
     ),
   ),
-  'outputContexts' => 
+  'contextOut' => 
   array (
     0 => 
     array (
-      'name' => 'projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name',
-      'lifespanCount' => 5,
+      'name' => 'context name',
+      'lifespan' => 5,
       'parameters' => 
       array (
         'param' => 'param value',
       ),
     ),
   ),
-  'followupEventInput' => 
+  'followupEvent' => 
   array (
     'name' => 'event name',
-    'languageCode' => 'es',
     'parameters' => 
     array (
       'param' => 'param value',
     ),
   ),
 );
+
 echo json_encode($response);
 
 }
