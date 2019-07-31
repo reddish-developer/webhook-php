@@ -24,7 +24,7 @@ if (!$link) {
 }
 else{
     $text ='connected ';
-	
+}
 //mssql_select_db($dbName) or DIE("Database unavailable");
 
 //$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
