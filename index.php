@@ -18,8 +18,11 @@ $textparameters = $json->queryResult->parameters;
 
 
 
-$link = mssql_connect($hostname, $username, $password);
-if (!$link) {
+$serverName = "sql5017.site4now.net";
+$connectionInfo = array( "Database"=>"DB_A41070_iluminacion1108", "UID"=>"DB_A41070_iluminacion1108_admin", "PWD"=>"iluminacion1108");
+$conn = sqlsrv_connect( $serverName, $connectionInfo );
+
+if (!$conn) {
     $text = 'Something went wrong while connecting to MSSQL');
 }
 else{
