@@ -47,10 +47,7 @@ $response = array (
   array (
     0 => 
     array (
-      'text' => 
-      array (
-        0 => 'text response',
-      ),
+      'text' => 'text response',
     ),
   ),
   'source' => 'example.com',
@@ -97,14 +94,13 @@ $response = array (
   'followupEventInput' => 
   array (
     'name' => 'event name',
-    'languageCode' => 'en-US',
+    'languageCode' => 'es',
     'parameters' => 
     array (
       'param' => 'param value',
     ),
   ),
 );
-
 echo json_encode($response);
 
 }
