@@ -1,6 +1,10 @@
 <?php 
 
 $method = $_SERVER['REQUEST_METHOD'];
+$hostname = "2K5CIPSA";
+$username = "sa";
+$password = "CTDY2K";
+$dbName = "CIPSA";
 
 // Process only juniorwhen method is POST
 if($method == 'POST'){
@@ -8,12 +12,24 @@ if($method == 'POST'){
 	
 $json = json_decode($requestBody);
 $text = $json->queryResult->parameters->text;
-
 	
 $textqueryResult = $json->queryResult;
 $textparameters = $json->queryResult->parameters;
 
-	
+
+MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND.");
+mssql_select_db($dbName) or DIE("Database unavailable");
+
+$query = "SELECT TOP 1 NOM_ARTICULO FROM ARTICULO";
+$result = mssql_query( $query );
+
+for ($i = 0; $i < mssql_num_rows( $result ); ++$i)
+     {
+         $line = mssql_fetch_row($result);
+         print( "$line[0] - $line[1]\n");
+     }
+	 
+$text =  $line[0];
 
 switch ($text) {
 		case 'hi':
@@ -42,7 +58,7 @@ $response->source = "webhook";
 	
 
 $response = array (
-  'fulfillmentText' => 'zzThis is a text response',
+  'fulfillmentText' => $text,
   'fulfillmentMessages' => 
   array (
     0 => 
