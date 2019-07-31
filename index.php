@@ -17,19 +17,19 @@ $textqueryResult = $json->queryResult;
 $textparameters = $json->queryResult->parameters;
 
 
-MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND.");
-mssql_select_db($dbName) or DIE("Database unavailable");
+//MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND.");
+//mssql_select_db($dbName) or DIE("Database unavailable");
 
-$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
-$result = mssql_query( $query );
+//$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
+//$result = mssql_query( $query );
 
-for ($i = 0; $i < mssql_num_rows( $result ); ++$i)
-     {
-         $line = mssql_fetch_row($result);
-         print( "$line[0] - $line[1]\n");
-     }
+//for ($i = 0; $i < mssql_num_rows( $result ); ++$i)
+ //    {
+  //       $line = mssql_fetch_row($result);
+   //      print( "$line[0] - $line[1]\n");
+    // }
 	 
-$text =  $line[0];
+$text =  $hostname;
 
 switch ($text) {
 		case 'hi':
