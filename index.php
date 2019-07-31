@@ -42,18 +42,29 @@ $response->source = "webhook";
 	
 
 $response = array (
-  'speech' => 'spoken response',
-  'displayText' => 'displayed response',
-  'messages' => 
+  'fulfillmentText' => 'zzThis is a text response',
+  'fulfillmentMessages' => 
   array (
     0 => 
     array (
-      'speech' => 'Text response',
-      'type' => 0,
+      'card' => 
+      array (
+        'title' => 'card title',
+        'subtitle' => 'card text',
+        'imageUri' => 'https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png',
+        'buttons' => 
+        array (
+          0 => 
+          array (
+            'text' => 'yybutton text',
+            'postback' => 'https://assistant.google.com/',
+          ),
+        ),
+      ),
     ),
   ),
   'source' => 'example.com',
-  'data' => 
+  'payload' => 
   array (
     'google' => 
     array (
@@ -74,31 +85,11 @@ $response = array (
     ),
     'facebook' => 
     array (
-      'text' => 'xxHello, Facebook!',
+      'text' => 'Hello, Facebook!',
     ),
     'slack' => 
     array (
-      'text' => 'xxThis is a text response for Slack.',
-    ),
-  ),
-  'contextOut' => 
-  array (
-    0 => 
-    array (
-      'name' => 'context name',
-      'lifespan' => 5,
-      'parameters' => 
-      array (
-        'param' => 'param value',
-      ),
-    ),
-  ),
-  'followupEvent' => 
-  array (
-    'name' => 'event name',
-    'parameters' => 
-    array (
-      'param' => 'param value',
+      'text' => 'This is a text response for Slack.',
     ),
   ),
 );
