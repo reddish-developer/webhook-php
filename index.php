@@ -18,16 +18,6 @@ $textparameters = $json->queryResult->parameters;
 
 
 
-$serverName = "sql5017.site4now.net";
-$connectionInfo = array( "Database"=>"DB_A41070_iluminacion1108", "UID"=>"DB_A41070_iluminacion1108_admin", "PWD"=>"iluminacion1108");
-$conn = sqlsrv_connect( $serverName, $connectionInfo );
-
-if (!$conn) {
-    $text = 'Something went wrong while connecting to MSSQL');
-}
-else{
-    $text ='connected ';
-}
 //mssql_select_db($dbName) or DIE("Database unavailable");
 
 //$query = "SELECT TOP 1 NOM_ARTICULO FROM PRODUCTO";
@@ -68,7 +58,7 @@ $response->source = "webhook";
 	
 
 $response = array (
-  'fulfillmentText' => $text,
+  'fulfillmentText' => $hostname,
   'fulfillmentMessages' => 
   array (
     0 => 
