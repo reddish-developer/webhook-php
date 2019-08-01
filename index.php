@@ -2,16 +2,16 @@
 
 $method = $_SERVER['REQUEST_METHOD'];
 $hostname = "sql5017.site4now.net";
-$username = "DB_A41070_iluminacion1108_admin";
-$password = "iluminacion1108";
-$dbName = "DB_A41070_iluminacion1108";
+$username = "";
+$password = "";
+$dbName = "";
 
 // Process only juniorwhen method is POST
 if($method == 'POST'){
 	
-$requestBody = file_get_contents('php://input');	
-$json = json_decode($requestBody);
-$text = $json->queryResult->parameters->text;
+//$requestBody = file_get_contents('php://input');	
+//$json = json_decode($requestBody);
+//$text = $json->queryResult->parameters->text;
 	
 $textqueryResult = $json->queryResult;
 $textparameters = $json->queryResult->parameters;
@@ -29,7 +29,7 @@ $textparameters = $json->queryResult->parameters;
    //      print( "$line[0] - $line[1]\n");
     // }
 	 
-//$text =  $hostname;
+$text =  $hostname;
 
 switch ($text) {
 		case 'hi':
